@@ -13,7 +13,11 @@ import escuro from '../assets/lua.png';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(() => {
+      // Carrega o tema salvo ou usa o modo claro por padrão
+      const savedTheme = localStorage.getItem('theme');
+      return savedTheme === 'dark';
+    });
 
   const menu_suspenso = () => {
     setIsOpen(!isOpen);
@@ -23,8 +27,10 @@ const Header = () => {
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark'); // Salva o tema escuro
     } else {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light'); // Salva o tema claro
     }
   }, [darkMode]);
 
