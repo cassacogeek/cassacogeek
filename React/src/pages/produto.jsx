@@ -10,7 +10,7 @@ const Produto = () => {
     const produto = Produtos.find((p) => p.id === Number(id));
 
     return (
-        <div className='mt-20 w-full h-screen'>
+        <div className='bg-white dark:bg-gray-800 mt-20 w-full h-screen'>
                 <div className='flex justify-center'>
                     <div className='grid grid-cols-3 w-3/4 p-5 mt-4 border dark:border-gray-600 rounded-xl shadow-xl'>
                         <img src={produto.imgSrc} alt={produto.name} />

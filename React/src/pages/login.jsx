@@ -1,8 +1,8 @@
 import React from "react";
-const Sacola = () => {
+const Login = () => {
     return (
         <div></div>
     )
 };
 
-export default Sacola;
+export default Login;

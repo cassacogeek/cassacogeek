@@ -47,7 +47,6 @@ const Header = () => {
                     <button onClick={menu_suspenso} type="button">
                         <img src={menu} alt="menu"/>
                     </button>
-                    
                 </div>
 					  <div className='mt-2 ms-2'><Link to={'/'}><img src={logo} alt="logo"/></Link></div>
               <div className="flex grow justify-center">
@@ -59,12 +58,12 @@ const Header = () => {
                 </form>
               </div>
               <div className="flex grow-0">
-                <a className='me-2 mt-2' href="#">
+                <Link className='me-2 mt-2' to={'/sacola'}>
                   <img src={sacola} alt="sacola"/>
-                </a>
-                <a className='me-2 mt-2' href="#">
+                </Link>
+                <Link className='me-2 mt-2' to={'/login'}>
                   <img src={login} alt="login"/>
-                    </a>
+                </Link>
                     <button onClick={toggleTheme} className="h-[32px] mt-1 p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded-full">
                       <img src={darkMode ? escuro : claro} alt={darkMode ? 'claro' : 'escuro'} />
                     </button>

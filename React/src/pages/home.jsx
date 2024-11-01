@@ -7,7 +7,7 @@ import { slidesCategorias, slidesLancamentos, slidesMaisVendidos, slidesOfertas 
 const Home = () => {
 
     return (
-        <div>
+        <div className='bg-white dark:bg-gray-800'>
           <div className='pt-24' id='Lacamentos'>
           <div className='pb-1'>
             <div className='mx-10 sm:mx-20 xl:mx-28 w-full border-b'>
