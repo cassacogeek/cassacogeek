@@ -26,8 +26,8 @@ const Produto = () => {
                                     1
                                     <button className='rounded-full hover:bg-gray-400'>+</button>
                                 </div>
-                                <div><button className='rounded bg-[#bdac7f] px-3 py-2'>Comprar</button></div>
-                                <div><button className='rounded bg-[#bdac7f] col-span-2 px-3 py-2'>Adicionar à sacola</button></div>
+                                <div><button className='rounded bg-[#bdac7f] dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-600 dark:text-gray-200 px-3 py-2'>Comprar</button></div>
+                                <div><button className='rounded bg-[#bdac7f] dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-600 dark:text-gray-200 col-span-2 px-3 py-2'>Adicionar à sacola</button></div>
                             </div>
                         </div>
                         <p className='text-black dark:text-white'>Descricao do produto.</p>

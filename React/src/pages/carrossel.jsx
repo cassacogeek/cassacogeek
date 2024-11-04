@@ -27,10 +27,10 @@ const Carousel = ({slidesData}) => {
                         <img src={slide.imgSrc} alt={slide.name} lassName="w-full" />
                       </div>
                       <div className='grid grid-cols-2'>
-                        <div className="text-black dark:text-gray-200 font-bold mb-2">{slide.name}</div>
+                        <div className="text-gray-700 dark:text-gray-200 mb-2">{slide.name}</div>
                         <div className='text-right'>
                           <div className='text-xs line-through text-gray-400 dark:text-gray-500'>{slide.oferta}</div>
-                          <div className='text-black dark:text-gray-200'>{slide.preco}</div>
+                          <div className='font-bold text-[#735731] dark:text-gray-200'>{slide.preco}</div>
                         </div>
                       </div>
                     </Link>

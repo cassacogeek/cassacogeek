@@ -41,7 +41,7 @@ const Header = () => {
 
     return (
         <div>
-            <nav className="fixed top-0 w-full bg-[#bdac7f] p-5" id="cabecalho">
+            <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 p-5 shadow-lg border border-transparent border-b-gray-200" id="cabecalho">
             <div className="flex">
                 <div className="flex">
                     <button onClick={menu_suspenso} type="button">
