@@ -1,8 +1,12 @@
-import React from "react";
-import Facebook from '../assets/facebook.png'
-import Instagram from '../assets/instagram.png'
+import React, { useState, useEffect } from 'react'
+import FacebookClaro from '../assets/facebook-claro.png'
+import FacebookEscuro from '../assets/facebook-escuro.png'
+import InstagramClaro from '../assets/instagram-claro.png'
+import InstagramEscuro from '../assets/instagram-escuro.png'
+import { useTheme } from '../functions/themeContext';
 
 const Footer = () => {
+    const { darkMode } = useTheme();
 
     return (
         <footer>
@@ -19,8 +23,8 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                         <h2>Redes sociais.</h2>
-                        <p className="flex justify-center"><a href="" target="_blank"><img src={Facebook} alt="Facebook" /></a></p>
-                        <p className="flex justify-center"><a href="" target="_blank"><img src={Instagram} alt="Instagram" /></a></p>
+                        <p className="flex justify-center"><a href="" target="_blank"><img src={darkMode ? FacebookClaro : FacebookEscuro} alt="Facebook" /></a></p>
+                        <p className="flex justify-center"><a href="" target="_blank"><img src={darkMode ? InstagramClaro : InstagramEscuro} alt="Instagram" /></a></p>
                     </div>
                 </div>
                 <div className="border-2 border-transparent border-t-gray-200 p-2">

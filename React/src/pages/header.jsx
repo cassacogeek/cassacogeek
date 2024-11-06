@@ -1,57 +1,42 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import menu from '../assets/menu.png';
-import logo from '../assets/cassaco.png'
-import login from '../assets/login.png';
-import sacola from '../assets/sacola-de-compras.png';
+import menuClaro from '../assets/menu-claro.png'
+import menuEcuro from '../assets/menu-escuro.png';
+// import logoClaro from '../assets/logo-claro.png'
+import logoEscuro from '../assets/logo-escuro.png'
+import loginClaro from '../assets/login-claro.png';
+import loginEscuro from '../assets/login-escuro.png';
+import sacolaClaro from '../assets/sacola-claro.png';
+import sacolaEscuro from '../assets/sacola-escuro.png';
 import buscaEscuro from '../assets/lupaescuro.png';
 import buscaClaro from '../assets/lupaclaro.png';
 import closeLigth from '../assets/xclaro.png';
 import closeDark from '../assets/xescuro.png';
 import claro from '../assets/sol.png';
 import escuro from '../assets/lua.png';
+import { useTheme } from '../functions/themeContext';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(() => {
-      // Carrega o tema salvo ou usa o modo claro por padrão
-      const savedTheme = localStorage.getItem('theme');
-      return savedTheme === 'dark';
-    });
+    const { darkMode, toggleTheme } = useTheme();
 
   const menu_suspenso = () => {
     setIsOpen(!isOpen);
   };
   
-  // Altera o tema ao mudar o estado de darkMode
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark'); // Salva o tema escuro
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light'); // Salva o tema claro
-    }
-  }, [darkMode]);
-
-  // Função para alternar entre claro e escuro
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
-    return (
+      return (
         <div>
             <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 p-5 shadow-lg border border-transparent border-b-gray-200" id="cabecalho">
             <div className="flex">
                 <div className="flex">
                     <button onClick={menu_suspenso} type="button">
-                        <img src={menu} alt="menu"/>
+                        <img src={darkMode ? menuClaro : menuEcuro} alt="menu"/>
                     </button>
                 </div>
-					  <div className='mt-2 ms-2'><Link to={'/'}><img src={logo} alt="logo"/></Link></div>
+					  <div className='ms-2'><Link to={'/'}><img className='absolute top-2 w-[64px]' src={darkMode ? "logo" : logoEscuro} alt="logo"/></Link></div>
               <div className="flex grow justify-center">
                 <form>
-                  <input className="w-[400px] h-10 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full" type="text" placeholder="  Buscar"/>
+                  <input className="w-[400px] h-10 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full ring-2 ring-gray-400" type="text" placeholder="  Buscar"/>
                   <button className='relative end-11 top-2'>
                     <img className='w-7' src={darkMode ? buscaClaro : buscaEscuro} alt="lupa"/>
                   </button>
@@ -59,10 +44,10 @@ const Header = () => {
               </div>
               <div className="flex grow-0">
                 <Link className='me-2 mt-2' to={'/sacola'}>
-                  <img src={sacola} alt="sacola"/>
+                  <img src={darkMode ? sacolaClaro : sacolaEscuro} alt="sacola"/>
                 </Link>
                 <Link className='me-2 mt-2' to={'/login'}>
-                  <img src={login} alt="login"/>
+                  <img src={darkMode ? loginClaro : loginEscuro} alt="login"/>
                 </Link>
                     <button onClick={toggleTheme} className="h-[32px] mt-1 p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded-full">
                       <img src={darkMode ? escuro : claro} alt={darkMode ? 'claro' : 'escuro'} />
