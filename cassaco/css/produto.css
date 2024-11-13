@@ -1,117 +1,169 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {                                  /*css do produto relacionado*/
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
 }
-
-body {
-    font-family: Poppins, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-}
-
-/* Cabeçalho */
+/*cabeçalho*/
 header {
     background-color: #ccc;
     color: black;
-    padding: 20px 0;
     display: flex;
+    padding: 6px 0;
     justify-content: center;
     text-align: center;
     font-size: 14px;
 }
 
-/* Seção principal da página de compras */
-.pagina-compras {
+.product-container {
+    margin-top: 20px;
     display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: white;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    margin-left: 80px;
+    position: relative;
 }
 
-.imagem-produto {
+
+.product-image {
     flex: 1;
-    padding: 20px;
+    max-width: 300px;
 }
 
-.imagem-produto img {
-    max-width: 100%;
+.product-image img {
+    width: 100%;
     border-radius: 8px;
 }
 
-.detalhes-produto {
+.product-details {
     flex: 2;
-    padding: 20px;
+    padding-left: 20px;
+    margin-left: 350px;
+    margin-top: 20px;
+    margin-bottom: auto;
 }
 
-.detalhes-produto h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.product-details h1 {
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
-.descricao {
+.price {
+    
+    font-size: 20px;
+    font-size: 300%;
+    color: #000000;
     margin: 10px 0;
-    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-.preco {
-    font-size: 24px;
-    color: black;
-    margin: 10px 0;
+.button-container {
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
 }
 
-.qty {
-    background: #ccc;
-    display: inline-flex;
-    padding: 0 0;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 60px;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 30px;
-}
-.qty button {
-    background: #ccc;
+.comprar, .adicionar-carrinho {
+    font-size: 20px;
+    background-color: green;
+    color:white;
     border: none;
-    display: inline-flex;
-    padding: 0 0;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 60px;
+    padding: 10px 20px;
     border-radius: 20px;
-    overflow: hidden;
-    height: 30px;
-}
-.qty button:hover {
-    background: #817b7b;
     cursor: pointer;
 }
 
-.adicionar-carrinho {
-    text-decoration: none;
-    margin-left: 70px;
+.comprar:hover, .adicionar-carrinho:hover {
+    background-color: #3bc55b;
+}
+
+.related-products {
+    margin-top: 70px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.related-product-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.related-product-item {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.related-product-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.image-slider img {
+    width: 150%;
+    height: auto;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrow.left {
+    left: -20px;
+}
+
+.arrow.right {
+    right: -55%;
+}
+
+/*frete*/
+
+.frete-container {
+    position: relative;
+    margin-top: -15%;
+    padding: 20px;
+    margin-left: 52%;
+}
+
+.frete-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 40%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.frete-container button {
     background-color: green;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
 }
 
-.adicionar-carrinho:hover {
+.frete-container button:hover {
     background-color: #3bc55b;
 }
 
-/* Rodapé */
-footer {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    margin-top: 20px;
+#resultado-frete {
+    margin-top: 10px;
 }
+.descricao {
+    margin-top: 80px;
+    font-size: 12px;
+
+}
+
