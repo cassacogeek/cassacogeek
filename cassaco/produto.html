@@ -3,56 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cassaco Geek Produto.</title>
-    <link rel="stylesheet" href="css/produto.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    <link rel="stylesheet" href="stylespr.css">
+    <title>Página de Produtos</title>
 </head>
 <body>
-
     <header>
-        <h1>Página de Produto</h1>
+        <h1>Página de Produtos</h1>
     </header>
-
-    <main class="pagina-compras">
-        <div class="imagem-produto">
-            <img src="img/download.png" alt="Nome do Produto">
+    <div class="product-container">
+        <div class="image-slider">
+            <img id="product-image" src="img/download.png" alt="Produto">
+            <div class="arrow left" onclick="changeImage(-1)">&#10094;</div>
+            <div class="arrow right" onclick="changeImage(1)">&#10095;</div>
         </div>
-        <div class="detalhes-produto">
-            <h2>Quadro BMO minimalista - Hora de Aventura</h2>
-        <!--
-
-             <p class="descricao">
-                Papel e impressão
-                As impressões são feitas com tecnologia digital de altíssima resolução. Usamos papel resistente escolhido a dedo para garantir firmeza, qualidade e cores lindas ao seu quadro.
-            </p>
-            <p class="descricao">
-                Molduras
-                Todos os quadros acompanham molduras produzidas a partir de madeira maciça com pinturas laqueadas e acabamentos caprichados realizados por quem mais entende do assunto.
-            </p>
-            <p class="descricao">
-                Acabamento
-                Recomendamos adicionar o vidro de acrílico ao seu quadro, além de dar mais vida e brilho, ele irá proteger a imagem e aumentará a durabilidade do quadro, evitando desgates naturais e ambientais.
-            </p> -->
-            <p class="preco">R$ 29,90</p>
-            <div class="qty">
-                <button><i class='bx bx-minus'></i></button>
-                <span>1</span>
-                <button><i class='bx bx-plus'></i></button>
+        <div class="product-details">
+            <h1>Quadro BMO minimalista - Hora de Aventura</h1>
+            <p class="price">R$ 29,90</p>
+            <div class="button-container">
+                <button class="comprar">Comprar</button>
+                <button class="adicionar-carrinho">Adicionar ao Carrinho</button>
             </div>
-            
-            <a href="carrinho.html" class="adicionar-carrinho">Comprar</a>
-            <a href="carrinho.html" class="adicionar-carrinho">Adicionar ao Carrinho</a>
-
         </div>
-        
-    </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Loja de Produtos. Todos os direitos reservados.</p>
-    </footer>
+    
+    <div class="frete-container">
+        <h2>Calcule o Frete</h2>
+        <input type="text" id="cep" placeholder="Digite seu CEP">
+        <button onclick="buscarFrete()">Buscar</button>
+        <div id="resultado-frete"></div>
+    </div>
 
+    <div class="descricao">
+        <h2>Descrição</h2>
+        <h3><p>Placa Decorativa O Que Nao Desafia Não Transforma</p>
+
+            <p>Adicione inspiração e motivação ao seu espaço com a Placa Decorativa "O Que Não Desafia Não Transforma". Esta peça decorativa é perfeita para quem busca um toque de sabedoria e estilo em sua casa, escritório ou qualquer ambiente que precise de uma dose extra de encorajamento.</p>
+            
+            <p>Especificações Principais: Material: Feito em MDF</p>
+            
+            <p>Altura: 20 cm</p>
+            
+            <p>Largura: 30 cm</p>
+            
+            <p>Não Incluso Fita Dupla Face Atrás</p>
+            
+            <p>Transforme seu ambiente com a Placa Decorativa "O Que Não Desafia Não Transforma" e traga um toque de inspiração e estilo para seu dia a dia. Um lembrete elegante e motivador de que os desafios são essenciais para o crescimento pessoal e a transformação positiva.</p></h3>
+    </div>
+
+    <div class="related-products">
+        <h2>PRODUTOS RELACIONADOS</h2>
+        <div class="related-product-list">
+            <div class="related-product-item">
+                <a href="produto-relacionado1.html">
+                    <img src="img/download (1).png" alt="Produto Relacionado 1">
+                </a>
+            </div>
+            <div class="related-product-item">
+                <a href="produto-relacionado2.html">
+                    <img src="img/download (2).png" alt="Produto Relacionado 2">
+                </a>
+            </div>
+            <div class="related-product-item">
+                <a href="produto-relacionado3.html">
+                    <img src="img/download (1).png" alt="Produto Relacionado 3">
+                </a>
+            </div>
+            <div class="related-product-item">
+                <a href="produto-relacionado4.html">
+                    <img src="img/download (2).png" alt="Produto Relacionado 4">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const images = [
+            'img/download.png',
+            'img/download (1).png', // Adicionar imagens
+            'img/download (2).png'
+        ];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('product-image').src = images[currentIndex];
+        }
+
+
+    /*frete*/
+
+    function buscarFrete() {
+        const cep = document.getElementById('cep').value.replace(/\D/g, ''); // Remove caracteres não numéricos
+        const resultado = document.getElementById('resultado-frete');
+
+        if (cep.length !== 8) {
+            resultado.innerHTML = 'Por favor, insira um CEP válido.';
+            return;
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.erro) {
+                    resultado.innerHTML = 'CEP não encontrado.';
+                } else {
+                    resultado.innerHTML = `
+                        <p>Endereço: ${data.logradouro}</p>
+                        <p>Bairro: ${data.bairro}</p>
+                        <p>Cidade: ${data.localidade}</p>
+                        <p>Estado: ${data.uf}</p>
+                    `;
+                }
+            })
+            .catch(error => {
+                resultado.innerHTML = 'Erro ao buscar o CEP. Tente novamente.';
+                console.error(error);
+            });
+    }
+    </script>
 </body>
-</html>     
+</html>
+
