@@ -1,44 +1,67 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { Produtos } from '../data';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";  //captura o id da url
+import "./styles.css";
 
-import Header from './header';
-import Footer from './footer';
+const App = () => {
+  const [product, setProduct] = useState(null);
+  const { productId } = useParams(); //pega o id da url
 
-const Produto = () => {
-    const { id } = useParams();
-    const produto = Produtos.find((p) => p.id === Number(id));
+  const products = [
+    { id: 1, name: "Quadro BMO", image: "img/download.png", price: "R$ 29,90", description: "Descrição do Quadro BMO." },
+    { id: 2, name: "Caneca X", image: "img/download (1).png", price: "R$ 19,90", description: "Descrição da Caneca X." },
+    { id: 3, name: "Produto Y", image: "img/download (2).png", price: "R$ 39,90", description: "Descrição do Produto Y." },
+    //adiciona produtos conforme necessário
+  ];
 
-    return (
-        <div className='bg-white dark:bg-gray-800 mt-20 w-full h-screen'>
-                <div className='flex justify-center'>
-                    <div className='grid grid-cols-3 w-3/4 p-5 mt-4 border dark:border-gray-600 rounded-xl shadow-xl'>
-                        <img src={produto.imgSrc} alt={produto.name} />
-                        <div className='col-span-2'>
-                            <h1 className='font-bold text-2xl text-black dark:text-white mb-2'>{produto.name}</h1>
-                            <div className='text-black dark:text-white mb-2'>
-                                <p>{produto.oferta}</p>
-                                <p className='text-lg'>{produto.preco}</p>
-                            </div>
-                            <div className='grid grid-cols-4'>
-                                <div className='grid grid-cols-3 text-center text-black dark:text-white w-24 h-7 rounded-full bg-gray-300 dark:bg-gray-600'>
-                                    <button className='rounded-full hover:bg-gray-400'>-</button>
-                                    1
-                                    <button className='rounded-full hover:bg-gray-400'>+</button>
-                                </div>
-                                <div><button className='rounded bg-[#bdac7f] dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-600 dark:text-gray-200 px-3 py-2'>Comprar</button></div>
-                                <div><button className='rounded bg-[#bdac7f] dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-600 dark:text-gray-200 col-span-2 px-3 py-2'>Adicionar à sacola</button></div>
-                            </div>
-                        </div>
-                        <p className='text-black dark:text-white'>Descricao do produto.</p>
-                    </div>
-                </div>
-                <Header />
-                <div className='mt-60'>
-                <Footer />
-                </div>
+  useEffect(() => {
+    //filtra o produto pelo id passado pela url
+    const selectedProduct = products.find((prod) => prod.id === parseInt(productId));
+    setProduct(selectedProduct);
+  }, [productId]); //quando o productId mudar a página atualiza
+
+  if (!product) {
+    return <div>Produto não encontrado.</div>;
+  }
+
+  return (
+    <div>
+      <header>
+        <h1>{product.name}</h1>
+      </header>
+
+      <div className="product-container">
+        <div className="image-slider">
+          <img id="product-image" src={product.image} alt={product.name} />
         </div>
-    );
+        <div className="product-details">
+          <h1>{product.name}</h1>
+          <p className="price">{product.price}</p>
+          <div className="button-container">
+            <button className="comprar">Comprar</button>
+            <button className="adicionar-carrinho">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="descricao">
+        <h2>DESCRIÇÃO</h2>
+        <p>{product.description}</p>
+      </div>
+
+      <div className="related-products">
+        <h2>PRODUTOS RELACIONADOS</h2>
+        <div className="related-product-list">
+          {products.map((prod) => (
+            <div className="related-product-item" key={prod.id}>
+              <a href={/produto/${prod.id}}>
+                <img src={prod.image} alt={Produto Relacionado ${prod.name}} />
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
- 
-export default Produto;
+
+export default App;
