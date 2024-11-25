@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 const Sacola = () => {
     //armazena produtos iniciando com 1 produto
   const [products, setProducts] = useState([

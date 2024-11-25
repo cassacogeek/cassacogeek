@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import menuClaro from '../assets/menu-claro.png'
 import menuEcuro from '../assets/menu-escuro.png';
-// import logoClaro from '../assets/logo-claro.png'
+import logoClaro from '../assets/logo-claro.png';
 import logoEscuro from '../assets/logo-escuro.png'
 import loginClaro from '../assets/login-claro.png';
 import loginEscuro from '../assets/login-escuro.png';
@@ -28,29 +28,29 @@ const Header = () => {
         <div>
             <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 p-5 shadow-lg border border-transparent border-b-gray-200" id="cabecalho">
             <div className="flex">
-                <div className="flex">
+                <div className="flex ">
                     <button onClick={menu_suspenso} type="button">
-                        <img src={darkMode ? menuClaro : menuEcuro} alt="menu"/>
+                    <img className='absolute top-7 w-[31px]' src={darkMode ? menuClaro : menuEcuro} alt="menu"/>
                     </button>
                 </div>
-					  <div className='ms-2'><Link to={'/'}><img className='absolute top-2 w-[64px]' src={darkMode ? "logo" : logoEscuro} alt="logo"/></Link></div>
+					  <div className='ms-2'><Link to={'/'}><img className='absolute top-1 w-[75px] ml-8' src={darkMode ? logoClaro : logoEscuro} alt="logo"/></Link></div>
               <div className="flex grow justify-center">
                 <form>
-                  <input className="w-[400px] h-10 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full ring-2 ring-gray-400" type="text" placeholder="  Buscar"/>
-                  <button className='relative end-11 top-2'>
+                  <input className="w-[400px] translate-y-0.5 h-10 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full ring-2 ring-gray-400 pl-3" type="text" placeholder="  Buscar"/>
+                  <button className='relative end-11 top-2.5'>
                     <img className='w-7' src={darkMode ? buscaClaro : buscaEscuro} alt="lupa"/>
                   </button>
                 </form>
               </div>
               <div className="flex grow-0">
                 <Link className='me-2 mt-2' to={'/sacola'}>
-                  <img src={darkMode ? sacolaClaro : sacolaEscuro} alt="sacola"/>
+                  <img className='w-[31px] transform translate-y-0.5' src={darkMode ? sacolaClaro : sacolaEscuro} alt="sacola"/>
                 </Link>
                 <Link className='me-2 mt-2' to={'/login'}>
-                  <img src={darkMode ? loginClaro : loginEscuro} alt="login"/>
+                 <img className='w-[31px]' src={darkMode ? loginClaro : loginEscuro} alt="login"/>
                 </Link>
-                    <button onClick={toggleTheme} className="h-[32px] mt-1 p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded-full">
-                      <img src={darkMode ? escuro : claro} alt={darkMode ? 'claro' : 'escuro'} />
+                    <button onClick={toggleTheme} className="h-[38px] translate-y-1 mt-1 p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded-full">
+                    <img className='w-[25px] translate-y-0.2' src={darkMode ? escuro : claro} alt={darkMode ? 'claro' : 'escuro'} />
                     </button>
                 </div>
             </div>
