@@ -47,9 +47,10 @@ const Cadastrar = () => {
     </button>
   </a>
   
-  <p class="text-blue-500">
-    <a href="/entrar">
+  <p>
       Já tem uma conta?
+    <a href="/entrar" class="text-blue-500">
+      Entrar.
     </a>
   </p>
   </div>
