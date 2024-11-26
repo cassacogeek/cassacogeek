@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const [user, setUser] = React.useState(null);
+const [user, setUser] = React.useState(null); {
 
-return <div>{user ? user.name : "Usuário não encontrado"}</div>;
+return <div>{user ? user.name : "Usuário não encontrado"}</div>; 
+  (
 
 <div className="flex items-center justify-center h-screen bg-gray-100">
   <div className="w-[800px] bg-gray-50 text-black border border-gray-500 rounded-lg p-5 shadow-lg text-center">
