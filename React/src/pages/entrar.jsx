@@ -57,3 +57,5 @@ const Entrar = () => {
     )
 
 }
+
+export default Entrar;
