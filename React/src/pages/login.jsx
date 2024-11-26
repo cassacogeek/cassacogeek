@@ -4,17 +4,23 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-<div>
-        <div class="caixa">
-        <h1>Escolha uma forma de entrar.</h1>
-        <Link to="/entar">
-            <button class="button">Entrar</button>
-        </Link>
-        <Link to="/cadastrar">
-            <button class="button">Cadastrar</button>
-        </Link>
-        </div>
-    </div>
+
+<div class="flex items-center justify-center h-screen bg-gray-50">
+  <div class="w-96 bg-gray-50 text-black border border-gray-500 rounded-lg p-5 shadow-lg text-center">
+    <h1 class="text-xl font-semibold mb-4">Escolha uma forma de login.</h1>
+    <a href="/entrar">
+      <button class="block w-3/4 mx-auto bg-gray-500 text-white py-2 px-4 mt-2 rounded-lg hover:bg-gray-300 hover:text-gray-500 border transition-colors">
+        Entrar
+      </button>
+    </a>
+    <a href="/cadastrar">
+      <button class="block w-3/4 mx-auto bg-gray-500 text-white py-2 px-4 mt-2 rounded-lg hover:bg-gray-300 hover:text-gray-500 border transition-colors">
+        Cadastrar
+      </button>
+    </a>
+  </div>
+</div>
+
     )
 };
 
