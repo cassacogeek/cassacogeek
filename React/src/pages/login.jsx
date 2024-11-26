@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import "./login.css";
+// import "../css/login.css";
 
 const Login = () => {
     return (
 <div>
         <div class="caixa">
         <h1>Escolha uma forma de entrar.</h1>
-        <link to="/entar">
+        <Link to="/entar">
             <button class="button">Entrar</button>
-        </link>
-        <link to="/cadastrar">
+        </Link>
+        <Link to="/cadastrar">
             <button class="button">Cadastrar</button>
-        </link>
+        </Link>
         </div>
     </div>
     )

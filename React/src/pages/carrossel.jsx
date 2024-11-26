@@ -15,7 +15,7 @@ const Carousel = ({ slidesData }) => {
   };
 
   return (
-    <div className="">
+    <div className="w-full">
       <Slider {...settings}>
         {[0, 4].map((startIndex) => (
           <div key={startIndex}>
