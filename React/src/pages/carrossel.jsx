@@ -28,13 +28,13 @@ const Carousel = ({ slidesData }) => {
                   <Link key={slide.id} to={`/${slide.id}`} onClick={() => { setIdProduto(slide.id) }}>
                     <div className="mb-4 flex justify-center">
                       {/* Correção do erro de digitação */}
-                      <img src={slide.imgSrc} alt={slide.name} className="w-full h-auto object-contain" />
+                      <img src={slide.image} alt={slide.name} className="w-full h-auto object-contain" />
                     </div>
                     <div className="grid grid-cols-2">
                       <div className="text-gray-700 dark:text-gray-200 mb-2">{slide.name}</div>
                       <div className="text-right">
                         <div className="text-xs line-through text-gray-400 dark:text-gray-500">{slide.oferta}</div>
-                        <div className="font-bold text-[#735731] dark:text-gray-200">{slide.preco}</div>
+                        <div className="font-bold text-[#735731] dark:text-gray-200">{slide.price}</div>
                       </div>
                     </div>
                   </Link>

@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import "../css/carrinhoreact.css"
+
+import Header from './header';
+import Footer from './footer';
+
 const Sacola = () => {
     //armazena produtos iniciando com 1 produto
   const [products, setProducts] = useState([
@@ -93,7 +98,7 @@ const Sacola = () => {
   }, [couponMessage]);
     
     return (
-        <div>
+        <div className='mt-24'>
             <header>
         <span>Carrinho de compras</span>
       </header>
@@ -215,6 +220,10 @@ const Sacola = () => {
           </aside>
         </div>
       </main>
+      <div className='fixed left-0'><Header /></div>
+        <div className='mt-60'>
+          <Footer />
+        </div>
     </div>
     )
 };

@@ -6,97 +6,104 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
-import "./styles.css";
+import Header from './header';
+import Footer from './footer';
 
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        {/*página principal*/}
-        <Route path="/" element={<Home />} />
-        {/*página do produto*/}
-        <Route path="/produto/:productId" element={<ProductPage />} />
-      </Routes>
-    </Router>
-  );
-};
+import { Produtos } from '../data';
 
-const Home = () => {
-  const products = [
-    { id: 1, name: "Quadro BMO", image: "img/download.png", price: "R$ 29,90" },
-    {
-      id: 2,
-      name: "Produto X",
-      image: "img/download (1).png",
-      price: "R$ 19,90",
-    },
-    {
-      id: 3,
-      name: "Produto Y",
-      image: "img/download (2).png",
-      price: "R$ 39,90",
-    },
-  ];
+import "../css/produto.css";
 
-  return (
-    <div>
-      <h1>Produtos</h1>
-      <div className="product-list">
-        {products.map((prod) => (
-          <div key={prod.id} className="product-item">
-            <Link to={`/produto/${prod.id}`}>
-              <img src={prod.image} alt={prod.name} />
-              <h3>{prod.name}</h3>
-              <p>{prod.price}</p>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+// const App = () => {
+//   return (
+//     <Router>
+//       <Routes>
+//         {/*página principal*/}
+//         <Route path="/" element={<Home />} />
+//         {/*página do produto*/}
+//         <Route path="/produto/:productId" element={<ProductPage />} />
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+// const Home = () => {
+//   const products = [
+//     { id: 1, name: "Quadro BMO", image: "img/download.png", price: "R$ 29,90" },
+//     {
+//       id: 2,
+//       name: "Produto X",
+//       image: "img/download (1).png",
+//       price: "R$ 19,90",
+//     },
+//     {
+//       id: 3,
+//       name: "Produto Y",
+//       image: "img/download (2).png",
+//       price: "R$ 39,90",
+//     },
+//   ];
+
+//   return (
+//     <div>
+//       <h1>Produtos</h1>
+//       <div className="product-list">
+//         {products.map((prod) => (
+//           <div key={prod.id} className="product-item">
+//             <Link to={`/produto/${prod.id}`}>
+//               <img src={prod.image} alt={prod.name} />
+//               <h3>{prod.name}</h3>
+//               <p>{prod.price}</p>
+//             </Link>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
 const ProductPage = () => {
-  const [product, setProduct] = useState(null);
-  const { productId } = useParams();
+  // const [product, setProduct] = useState(null);
+  // const { productId } = useParams();
+  const { id } = useParams();
+  const product = Produtos.find((p) => p.id === Number(id));
 
-  const products = [
-    {
-      id: 1,
-      name: "Quadro BMO",
-      image: "img/download.png",
-      price: "R$ 29,90",
-      description: "Descrição do Quadro BMO.",
-    },
-    {
-      id: 2,
-      name: "Produto X",
-      image: "img/download (1).png",
-      price: "R$ 19,90",
-      description: "Descrição da Caneca X.",
-    },
-    {
-      id: 3,
-      name: "Produto Y",
-      image: "img/download (2).png",
-      price: "R$ 39,90",
-      description: "Descrição do Produto Y.",
-    },
-  ];
+  // const products = [
+  //   {
+  //     id: 1,
+  //     name: "Quadro BMO",
+  //     image: "img/download.png",
+  //     price: "R$ 29,90",
+  //     description: "Descrição do Quadro BMO.",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Produto X",
+  //     image: "img/download (1).png",
+  //     price: "R$ 19,90",
+  //     description: "Descrição da Caneca X.",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Produto Y",
+  //     image: "img/download (2).png",
+  //     price: "R$ 39,90",
+  //     description: "Descrição do Produto Y.",
+  //   },
+  // ];
 
-  useEffect(() => {
-    const selectedProduct = products.find(
-      (prod) => prod.id === parseInt(productId)
-    );
-    setProduct(selectedProduct);
-  }, [productId]);
+  // useEffect(() => {
+  //   const selectedProduct = products.find(
+  //     (prod) => prod.id === parseInt(productId)
+  //   );
+  //   setProduct(selectedProduct);
+  // }, [productId]);
 
-  if (!product) {
-    return <div>Produto não encontrado.</div>;
-  }
+  // if (!product) {
+  //   return <div>Produto não encontrado.</div>;
+  // }
 
   return (
-    <div>
+    <div className="mt-24">
       <header>
         <h1>{product.name}</h1>
       </header>
@@ -138,7 +145,7 @@ const ProductPage = () => {
       <div className="related-products">
         <h2>PRODUTOS RELACIONADOS</h2>
         <div className="related-product-list">
-          {products.map((prod) => (
+          {Produtos.map((prod) => (
             <div className="related-product-item" key={prod.id}>
               <Link to={`/produto/${prod.id}`}>
                 <img
@@ -150,6 +157,10 @@ const ProductPage = () => {
           ))}
         </div>
       </div>
+      <div className='fixed left-0'><Header /></div>
+        <div className='mt-60'>
+          <Footer />
+        </div>
     </div>
   );
 };
@@ -223,4 +234,5 @@ const SimuladorFrete = () => {
   );
 };
 
-export default App;
+export default ProductPage;
+// export default App;

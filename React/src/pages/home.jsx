@@ -40,7 +40,7 @@ const Home = () => {
           </div>
           <Carousel slidesData={slidesMaisVendidos} />
         </div>
-        <Header />
+        <div className='fixed left-0'><Header /></div>
         <div className='mt-60'>
           <Footer />
         </div>
