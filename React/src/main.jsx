@@ -15,6 +15,7 @@ import Entrar from './pages/entrar';
 import Cadastrar from './pages/cadastrar';
 import Recuperar from './pages/recuperar';
 import Aviso from './pages/aviso';
+import Finalizacao from './pages/finalizacao';
 
 
 
@@ -29,6 +30,7 @@ const data = [
   	{ path: '/cadastrar', element: <Cadastrar />},
 	{ path: '/recuperar', element: <Recuperar />},
 	{ path: '/aviso', element: <Aviso />},
+	{ path: '/finalizacao', element: <Finalizacao />},
 ]
 
 const router = createBrowserRouter(data)
