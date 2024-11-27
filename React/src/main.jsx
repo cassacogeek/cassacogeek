@@ -11,13 +11,18 @@ import Produtos from './pages/produtos';
 import Produto from './pages/produto';
 import Sacola from './pages/sacola';
 import Login from './pages/login';
+import Entrar from '.pages/entrar';
+import Cadastrar from './pages/cadastrar'
+
 
 const data = [
 	{ path: '/', element: <Home /> },
 	{ path: '/produtos', element: <Produtos /> },
-  { path: '/sacola', element: <Sacola /> },
-  { path: '/login', element:<Login /> },
+  	{ path: '/sacola', element: <Sacola /> },
+  	{ path: '/login', element:<Login /> },
 	{ path: '/:id', element: <Produto /> },
+  	{ path: '/entrar', element: <Entrar />},
+  	{ path: '/cadastrar', element: <Cadastrar />},
 ]
 
 const router = createBrowserRouter(data)
