@@ -59,15 +59,15 @@ const ProductPage = () => {
         <h2>DESCRIÇÃO</h2>
         <p>{product.description}</p>
       </div>
-
+      <div className="mt-16">
       <SimuladorFrete />
-
+      </div>
       <div className="related-products">
-        <h2>PRODUTOS RELACIONADOS</h2>
+        <h2>PRODUTOS RECOMENDADOS</h2>
         <div className="related-product-list">
           {Produtos.map((prod) => (
             <div className="related-product-item" key={prod.id}>
-              <Link to={`/produto/${prod.id}`}>
+              <Link to={`/${prod.id}`}>
                 <img
                   src={prod.image}
                   alt={`Produto Relacionado ${prod.name}`}

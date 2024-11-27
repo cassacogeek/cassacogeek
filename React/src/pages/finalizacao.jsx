@@ -66,7 +66,7 @@ const Finalizacao = () => {
       { nome: 'Produto 3', preco: 200.00 }
     ];
 
-    let total = 0;
+    let total = 350.00;
     produtos.forEach((produto) => {
       total += produto.preco;
     });
@@ -75,10 +75,10 @@ const Finalizacao = () => {
   };
 
   return (
-    <div className="container mx-auto p-6 bg-white rounded-lg shadow-lg max-w-3xl">
+    <div className="container bg-white rounded-lg shadow-lg mt-24">
       <h1 className="text-center text-2xl mb-6">Finalização da Compra</h1>
 
-      <div className="Dados mb-10">
+      <div className="Dados mb-10 p-6">
         <h2 className="text-xl mb-3">Informações de Envio</h2>
         <form onSubmit={validarFormulario}>
           <label htmlFor="nome" className="block mb-2 font-bold">Nome Completo:</label>
@@ -170,7 +170,7 @@ const Finalizacao = () => {
             className="w-full p-3 mb-4 border border-gray-300 rounded-lg"
           />
 
-          <button type="submit" className="w-full p-4 bg-brown-600 text-white rounded-lg hover:bg-brown-700">Finalizar Compra</button>
+          <button type="submit" className="bg-[#735731] w-full p-4 bg-brown-600 text-black rounded-lg hover:bg-brown-700">Finalizar Compra</button>
         </form>
       </div>
 

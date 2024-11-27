@@ -10,7 +10,7 @@ const Produtos = [
       id: 1,
       name: "TV Mcqueen",
       oferta: "",
-      price: "R$2000",
+      price: "R$ 2000",
       description: "",
       estoque: 1,
       categoria: "Sala"
@@ -20,7 +20,7 @@ const Produtos = [
       id: 2,
       name: "Sofa do Shrek",
       oferta: 800,
-      price: "R$500",
+      price: "R$ 500",
       description: "",
       estoque: 5,
       categoria: "Sala"
@@ -30,7 +30,7 @@ const Produtos = [
       id: 3,
       name: "Console Personalizado Bob Esponja",
       oferta: "",
-      price: "R$9000",
+      price: "R$ 9000",
       description: "",
       estoque: 10,
       categoria: "Sala"
@@ -40,7 +40,7 @@ const Produtos = [
     id: 4,
     name: "Cafeteira Star Wars R2-D2",
     oferta: "",
-    price: "R$15",
+    price: "R$ 15",
     description: "",
     estoque: 3,
     categoria: "Cozinha"
@@ -50,7 +50,7 @@ const Produtos = [
   id: 5,
   name: "Porta Facas Deadpool",
   oferta: "",
-  price: "R$200",
+  price: "R$ 200",
   description: "",
   estoque: 143,
   categoria: "Cozinha"
@@ -60,7 +60,7 @@ const Produtos = [
   id: 6,
   name: "Roupa de Cama Goku",
   oferta: "",
-  price: "R$100",
+  price: "R$ 100",
   description: "",
   estoque: 3,
   categoria: "Quarto"
@@ -70,7 +70,7 @@ const Produtos = [
   id: 7,
   name: "Quadro Goku",
   oferta: 50,
-  price: "R$49.90",
+  price: "R$ 49.90",
   description: "",
   estoque: 3,
   categoria: "Quarto"
@@ -80,7 +80,7 @@ const Produtos = [
   id: 8,
   name: "Figure Vegeta",
   oferta: "",
-  price: "R$8001",
+  price: "R$ 8001",
   description: "",
   estoque: 3,
   categoria: "Quarto"
@@ -90,7 +90,7 @@ const Produtos = [
   id: 9,
   name: "Toalha Naruto",
   oferta:"" ,
-  price: "R$29.99",
+  price: "R$ 29.99",
   description: "",
   estoque: 3,
   categoria: "Banheiro"
@@ -100,7 +100,7 @@ const Produtos = [
   id: 10,
   name: "Jogo de Tapete One Piece",
   oferta: "",
-  price: "R$100",
+  price: "R$ 100",
   description: "",
   estoque: 3,
   categoria: "Banheiro"
