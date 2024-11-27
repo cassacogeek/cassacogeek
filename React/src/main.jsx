@@ -14,7 +14,7 @@ import Login from './pages/login';
 import Entrar from './pages/entrar';
 import Cadastrar from './pages/cadastrar';
 import Recuperar from './pages/recuperar';
-import Aviso from './pages/recuperar';
+import Aviso from './pages/aviso';
 
 
 
