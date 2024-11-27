@@ -20,6 +20,7 @@ import Aviso from './pages/aviso';
 
 const data = [
 	{ path: '/', element: <Home /> },
+	{ path: '/home', element: <Home /> },
 	{ path: '/produtos', element: <Produtos /> },
   	{ path: '/sacola', element: <Sacola /> },
   	{ path: '/login', element:<Login /> },
