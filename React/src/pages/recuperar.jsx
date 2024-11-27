@@ -35,4 +35,4 @@ const Recuperar = () => {
 
 }
 
-import default Recuperar;
+export default Recuperar;
