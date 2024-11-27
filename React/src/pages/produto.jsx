@@ -13,53 +13,6 @@ import { Produtos } from '../data';
 
 import "../css/produto.css";
 
-// const App = () => {
-//   return (
-//     <Router>
-//       <Routes>
-//         {/*página principal*/}
-//         <Route path="/" element={<Home />} />
-//         {/*página do produto*/}
-//         <Route path="/produto/:productId" element={<ProductPage />} />
-//       </Routes>
-//     </Router>
-//   );
-// };
-
-// const Home = () => {
-//   const products = [
-//     { id: 1, name: "Quadro BMO", image: "img/download.png", price: "R$ 29,90" },
-//     {
-//       id: 2,
-//       name: "Produto X",
-//       image: "img/download (1).png",
-//       price: "R$ 19,90",
-//     },
-//     {
-//       id: 3,
-//       name: "Produto Y",
-//       image: "img/download (2).png",
-//       price: "R$ 39,90",
-//     },
-//   ];
-
-//   return (
-//     <div>
-//       <h1>Produtos</h1>
-//       <div className="product-list">
-//         {products.map((prod) => (
-//           <div key={prod.id} className="product-item">
-//             <Link to={`/produto/${prod.id}`}>
-//               <img src={prod.image} alt={prod.name} />
-//               <h3>{prod.name}</h3>
-//               <p>{prod.price}</p>
-//             </Link>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
 
 const ProductPage = () => {
   // const [product, setProduct] = useState(null);
@@ -67,40 +20,7 @@ const ProductPage = () => {
   const { id } = useParams();
   const product = Produtos.find((p) => p.id === Number(id));
 
-  // const products = [
-  //   {
-  //     id: 1,
-  //     name: "Quadro BMO",
-  //     image: "img/download.png",
-  //     price: "R$ 29,90",
-  //     description: "Descrição do Quadro BMO.",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Produto X",
-  //     image: "img/download (1).png",
-  //     price: "R$ 19,90",
-  //     description: "Descrição da Caneca X.",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Produto Y",
-  //     image: "img/download (2).png",
-  //     price: "R$ 39,90",
-  //     description: "Descrição do Produto Y.",
-  //   },
-  // ];
-
-  // useEffect(() => {
-  //   const selectedProduct = products.find(
-  //     (prod) => prod.id === parseInt(productId)
-  //   );
-  //   setProduct(selectedProduct);
-  // }, [productId]);
-
-  // if (!product) {
-  //   return <div>Produto não encontrado.</div>;
-  // }
+  
 
   return (
     <div className="mt-24">
