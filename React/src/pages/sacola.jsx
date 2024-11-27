@@ -216,7 +216,9 @@ const Sacola = () => {
                 <span>R$ {calculateTotal().toFixed(2).replace(".", ",")}</span>
               </footer>
             </div>
-            <button>Finalizar Compra</button>
+              <Link to={"/finalizacao"}>
+                  <button>Finalizar Compra</button>
+              </Link>
           </aside>
         </div>
       </main>
