@@ -13,6 +13,9 @@ import Sacola from './pages/sacola';
 import Login from './pages/login';
 import Entrar from './pages/entrar';
 import Cadastrar from './pages/cadastrar';
+import Recuperar from './pages/recuperar';
+import Aviso from './pages/recuperar';
+
 
 
 const data = [
@@ -23,6 +26,8 @@ const data = [
 	{ path: '/:id', element: <Produto /> },
   	{ path: '/entrar', element: <Entrar />},
   	{ path: '/cadastrar', element: <Cadastrar />},
+	{ path: '/recuperar', element: <Recuperar />},
+	{ path: '/aviso', element: <Aviso />},
 ]
 
 const router = createBrowserRouter(data)
